@@ -1,8 +1,4 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
-import Login from './Login';
-import Learn from './Learn';
 import {
   StyleSheet,
   Text,
@@ -10,51 +6,168 @@ import {
   ScrollView,
   View,
   Image,
+  TouchableOpacity,
+  FlatList
 } from 'react-native';
-import Explore from './Explore';
-import Contact from './Contact';
-
-// const Tab = createBottomTabNavigator();
-
-// const HomeScreen = () => {
-//   return (
-//     <Tab.Navigator screenOptions={{ headerShown: false }}>
-//       <Tab.Screen 
-//         name="Trang chủ" 
-//         component={Home} 
-//       />
-//       <Tab.Screen 
-//         name="Ôn thi" 
-//         component={Learn} 
-//       />
-//       <Tab.Screen 
-//         name="Khám phá" 
-//         component={Explore} 
-//       />
-//       <Tab.Screen 
-//         name="Liên hệ" 
-//         component={Contact} 
-//       />
-//     </Tab.Navigator>
-//   );
-// }
+import { User, MainComponent, Notification} from 'iconsax-react-native';
 
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView} horizontal={true}>
-        <View style={styles.item}>
-          <Image
-            source={require('../assets/Images/quytrinhsat.png')}
-            style={styles.image}
-          />
-        </View>
-        <View style={styles.item}>
-          <Text>Item</Text>
-        </View>
-        <View style={styles.item}>
-          <Text>Item 3</Text>
-        </View>
+    <View style={styles.header}>
+    {/* User icon */}
+    <TouchableOpacity style={styles.iconContainer}>
+      <User color="#000" size={24} />
+    </TouchableOpacity>
+    {/* Notification icon */}
+    <TouchableOpacity style={styles.iconContainer}>
+      <Notification color="#000" size={24} />
+    </TouchableOpacity>
+  </View>
+      <ScrollView style={styles.scrollView}>
+        <ScrollView horizontal={true}>
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <Image
+                source={require('../assets/Images/quytrinhsat.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Quy trình làm đề đánh giá năng lực...</Text>
+              <Text style={styles.date}>01/01/2024</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Tìm hiểu</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <Image
+                source={require('../assets/Images/quytrinhsat.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Hướng dẫn ôn thi THPTQG</Text>
+              <Text style={styles.date}>23/02/2024</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Tìm hiểu</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <Image
+                source={require('../assets/Images/quytrinhsat.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Hướng dẫn giải đề THPTQG</Text>
+              <Text style={styles.date}>20/04/2024</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Tìm hiểu</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
+        <Text style={styles.title1}><MainComponent size="22" color="#696969" variant="Bold"/> Tính năng</Text>  
+        <ScrollView horizontal={true}>
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <Image
+                source={require('../assets/Images/sat1.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Đề đánh giá năng lực 1</Text>
+              <Text style={styles.date1}>1000 lượt xem</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Tìm hiểu</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <Image
+                source={require('../assets/Images/sat2.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Đề đánh giá năng lực 2</Text>
+              <Text style={styles.date}>Chưa có lượt xem</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Tìm hiểu</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <Image
+                source={require('../assets/Images/sat3.png')}
+                style={styles.image}
+              />
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Đề đánh giá năng lực 3</Text>
+              <Text style={styles.date}>20 lượt xem</Text>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Tìm hiểu</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
+        <Text style={styles.title1}><MainComponent size="22" color="#696969" variant="Bold"/> Lý thuyết</Text>  
+        <ScrollView horizontal={true}>
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <TouchableOpacity>
+              <Image
+                source={require('../assets/Images/matter_and_energy.jpg')}
+                style={styles.image}
+              />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Vật chất và năng lượng</Text>
+            </View>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <TouchableOpacity>
+              <Image
+                source={require('../assets/Images/phrase_of_matter.jpg')}
+                style={styles.image}
+              />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Các pha của vật chất</Text>
+            </View>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <View style={styles.item}>
+              <TouchableOpacity>
+              <Image
+                source={require('../assets/Images/Atomicstructure.png')}
+                style={styles.image}
+              />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.itemFooter}>
+              <Text style={styles.title}>Cấu trúc nguyên tử</Text>
+            </View>
+          </View>
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );
@@ -63,28 +176,96 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    height: 60,
+    alignContent: 'center',
+    backgroundColor: '#e0e0e0',
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
+  },
+  iconContainer: {
+    marginLeft: 20,
+    marginTop: 5,
   },
   scrollView: {
-    flexDirection: 'row'
+    // Remove flexDirection: 'row'
+  },
+  itemContainer: {
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
+    marginTop: 20,
   },
   item: {
-    marginTop: 20,
     width: 313,
     height: 142,
     backgroundColor: 'grey',
-    marginRight: 0,
-    marginLeft: 20,
-    borderRadius: 10
+    borderRadius: 10,
+    overflow: 'hidden', 
+    shadowColor: 'gray',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   image: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    borderRadius: 10
-  }
+  },
+  itemFooter: {
+    marginTop: 10,
+    justifyContent: 'flex-start',
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'black',
+    maxWidth: 313, // Giới hạn chiều cao của tiêu đề
+    overflow: 'hidden', // Ẩn bớt nếu vượt quá chiều cao giới hạn
+  },
+  title1: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#696969',
+    marginLeft: 20,
+    marginTop: 30,
+    marginBottom: 10,
+  },
+
+  date: {
+    fontSize: 14,
+    color: 'black',
+    textAlign: 'left',
+  },
+  date1: {
+    fontSize: 15,
+    color: 'black',
+    textAlign: 'left',
+  },
+  button: {
+    backgroundColor: '#075CFF',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 15,
+    marginTop: 8,
+    width: 100,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'white',
+  },
 });
 
 export default HomeScreen;

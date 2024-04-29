@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import HomeNavigator from './HomeNavigators';
-import { BoxSearch, Category2, GlobalSearch, Home } from 'iconsax-react-native';
+import { I3Dcube, Category2, GlobalSearch, Home } from 'iconsax-react-native';
 import ExploreNavigator from './ExploreNavigators';
 import LearnNavigator from './LearnNavigators';
 import ContactNavigator from './ContactNavigator';
@@ -35,7 +35,7 @@ const TabNavigator = () => {
             if (route.name === 'Trang chủ') {
                 return <Home size={size} color={focused ? 'coral' : '#676767'} />;
             } else if (route.name === 'Ôn thi') {
-                return <BoxSearch size={size} color={focused ? 'coral' : '#676767'} />;
+                return <I3Dcube size={size} color={focused ? 'coral' : '#676767'} />;
             } else if (route.name === 'Khám phá') {
                 return <GlobalSearch size={size} color={focused ? 'coral' : '#676767'} />;
             } else if (route.name === 'Liên hệ') {
