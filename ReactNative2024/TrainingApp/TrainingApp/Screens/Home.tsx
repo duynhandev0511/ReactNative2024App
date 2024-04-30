@@ -15,15 +15,25 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
     <View style={styles.header}>
-    {/* User icon */}
-    <TouchableOpacity style={styles.iconContainer}>
-      <User color="#000" size={24} />
-    </TouchableOpacity>
-    {/* Notification icon */}
-    <TouchableOpacity style={styles.iconContainer}>
-      <Notification color="#000" size={24} />
-    </TouchableOpacity>
-  </View>
+        {/* Logo container */}
+        <View style={styles.logoContainer}>
+          <Image
+            source={require('../assets/Images/logo1.png')}
+            style={styles.logo}
+          />
+        </View>
+        {/* Icon container */}
+        <View style={styles.iconContainer}>
+          {/* User icon */}
+          <TouchableOpacity style={styles.icon}>
+            <User color="#fff" size={24} variant="Bold" />
+          </TouchableOpacity>
+          {/* Notification icon */}
+          <TouchableOpacity style={styles.icon}>
+            <Notification color="#fff" size={24} variant="Bold" />
+          </TouchableOpacity>
+        </View>
+      </View>
       <ScrollView style={styles.scrollView}>
         <ScrollView horizontal={true}>
           <View style={styles.itemContainer}>
@@ -180,18 +190,38 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between', // Chia không gian ngang đều cho các phần tử trong header
     paddingHorizontal: 20,
     paddingTop: 10,
-    height: 60,
-    alignContent: 'center',
-    backgroundColor: '#e0e0e0',
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
+    height: 70,
+    backgroundColor: '#0C0042',
+  },
+  logoContainer: {
+    flexDirection: 'row', // Hiển thị các phần tử trong logo container theo hàng ngang
+    alignItems: 'center', // Canh giữa các phần tử trong logo container
+    justifyContent: 'center',
+  },
+  logo: {
+    width: 80,
+    height: 40,
+    marginRight: 10,
+  },
+  greeting: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  logoText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: 'bold',
   },
   iconContainer: {
-    marginLeft: 20,
-    marginTop: 5,
+    flexDirection: 'row', // Hiển thị các phần tử trong icon container theo hàng ngang
+    alignItems: 'center', // Canh giữa các phần tử trong icon container
+  },
+  icon: {
+    marginLeft: 20, // Khoảng cách giữa các icon
   },
   scrollView: {
     // Remove flexDirection: 'row'
@@ -218,8 +248,8 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   image: {
-    width: '100%',
-    height: '100%',
+    width: 313,
+    height: 142,
     resizeMode: 'cover',
   },
   itemFooter: {

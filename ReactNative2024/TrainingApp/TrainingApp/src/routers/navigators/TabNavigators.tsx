@@ -24,8 +24,6 @@ const TabNavigator = () => {
                 tabBarShowLabel: true,
                 tabBarStyle: {
                     height: 60,
-                    borderTopLeftRadius: 5,
-                    borderTopRightRadius:5,
                     justifyContent: 'center',
                     alignItems: 'center',
                     backgroundColor: 'white',
@@ -38,7 +36,7 @@ const TabNavigator = () => {
                 return <I3Dcube size={size} color={focused ? 'coral' : '#676767'} />;
             } else if (route.name === 'Khám phá') {
                 return <GlobalSearch size={size} color={focused ? 'coral' : '#676767'} />;
-            } else if (route.name === 'Liên hệ') {
+            } else if (route.name === 'Tiện ích') {
                 return <Category2 size={size} color={focused ? 'coral' : '#676767'} />;
             }
                 },
@@ -46,7 +44,7 @@ const TabNavigator = () => {
             <Tabs.Screen name={'Trang chủ'} component={HomeNavigator} />
             <Tabs.Screen name={'Ôn thi'} component={LearnNavigator} />
             <Tabs.Screen name={'Khám phá'} component={ExploreNavigator} />
-            <Tabs.Screen name={'Liên hệ'} component={ContactNavigator} />
+            <Tabs.Screen name={'Tiện ích'} component={ContactNavigator} />
             </Tabs.Navigator>
         </NavigationContainer>
     );
