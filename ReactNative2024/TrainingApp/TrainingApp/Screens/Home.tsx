@@ -34,8 +34,8 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <ScrollView style={styles.scrollView}>
-        <ScrollView horizontal={true}>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.itemContainer}>
             <View style={styles.item}>
               <Image
@@ -55,7 +55,7 @@ const HomeScreen = () => {
           <View style={styles.itemContainer}>
             <View style={styles.item}>
               <Image
-                source={require('../assets/Images/quytrinhsat.png')}
+                source={require('../assets/Images/studythpt.png')}
                 style={styles.image}
               />
             </View>
@@ -71,7 +71,7 @@ const HomeScreen = () => {
           <View style={styles.itemContainer}>
             <View style={styles.item}>
               <Image
-                source={require('../assets/Images/quytrinhsat.png')}
+                source={require('../assets/Images/study1thpt.png')}
                 style={styles.image}
               />
             </View>
@@ -85,7 +85,7 @@ const HomeScreen = () => {
           </View>
         </ScrollView>
         <Text style={styles.title1}><MainComponent size="22" color="#696969" variant="Bold"/> Tính năng</Text>  
-        <ScrollView horizontal={true}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.itemContainer}>
             <View style={styles.item}>
               <Image
@@ -135,12 +135,12 @@ const HomeScreen = () => {
           </View>
         </ScrollView>
         <Text style={styles.title1}><MainComponent size="22" color="#696969" variant="Bold"/> Lý thuyết</Text>  
-        <ScrollView horizontal={true}>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.itemContainer}>
             <View style={styles.item}>
-              <TouchableOpacity>
+              <TouchableOpacity activeOpacity={1}>
               <Image
-                source={require('../assets/Images/matter_and_energy.jpg')}
+                source={require('../assets/Images/matter_and_energy.png')}
                 style={styles.image}
               />
               </TouchableOpacity>
@@ -152,9 +152,9 @@ const HomeScreen = () => {
 
           <View style={styles.itemContainer}>
             <View style={styles.item}>
-              <TouchableOpacity>
+              <TouchableOpacity activeOpacity={1}>
               <Image
-                source={require('../assets/Images/phrase_of_matter.jpg')}
+                source={require('../assets/Images/phrase_of_matter.png')}
                 style={styles.image}
               />
               </TouchableOpacity>
@@ -166,7 +166,7 @@ const HomeScreen = () => {
 
           <View style={styles.itemContainer}>
             <View style={styles.item}>
-              <TouchableOpacity>
+              <TouchableOpacity activeOpacity={1}>
               <Image
                 source={require('../assets/Images/Atomicstructure.png')}
                 style={styles.image}
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   image: {
     width: 313,
     height: 142,
-    resizeMode: 'cover',
+    resizeMode: 'stretch'
   },
   itemFooter: {
     marginTop: 10,

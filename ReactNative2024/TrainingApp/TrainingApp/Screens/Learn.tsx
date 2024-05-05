@@ -11,7 +11,8 @@ import {
 } from 'react-native';
 import { User, MainComponent, Notification} from 'iconsax-react-native';
 
-const Learn = () => {
+
+const Learn = ({navigation}:any) => {
   return (
     <SafeAreaView style={styles.container}>
     <View style={styles.header}>
@@ -48,8 +49,44 @@ const Learn = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={styles.boxtext1}><Text style={styles.learntitle1}>Lý thuyết</Text><Text style={styles.viewall}>Xem tất cả</Text></View>
-          <View style={styles.boxtext1}><Text style={styles.learntitle1}>Trắc nghiệm</Text><Text style={styles.viewall}>Xem tất cả</Text></View>
+          <View style={styles.boxtext1}><Text style={styles.learntitle1}>Tính năng thông dụng</Text></View>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View style={styles.itemContainer1}>
+            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Chapter')}>
+            <View style={styles.item1}>
+              <Image
+                source={require('../assets/Images/chemistry.png')}
+                style={styles.image1}
+              />
+             <Text style={styles.title}>Lý thuyết hóa học</Text>
+            </View>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.itemContainer1}>
+            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('QuizzScreen')}>
+            <View style={styles.item1}>
+              <Image
+                source={require('../assets/Images/question.png')}
+                style={styles.image1}
+              />
+             <Text style={styles.title}>Câu hỏi trắc nghiệm</Text>
+            </View>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.itemContainer1}>
+            <TouchableOpacity activeOpacity={1}>
+            <View style={styles.item1}>
+              <Image
+                source={require('../assets/Images/bubble.png')}
+                style={styles.image1}
+              />
+             <Text style={styles.title}>Chatbot</Text>
+            </View>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </ScrollView>
     </SafeAreaView>
   );
@@ -104,73 +141,72 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginTop: 20,
   },
+  itemContainer1: {
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+  },
   item: {
     width: 313,
     height: 142,
     backgroundColor: '#DC8E47',
     borderRadius: 20,
     overflow: 'hidden', 
-    shadowColor: 'gray',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+  },
+  item1: {
+    width: 275,
+    height: 142,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    overflow: 'hidden', 
+    borderColor: 'black',
   },
   image: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
   },
+  image1: {
+    width: 50,
+    height: 50,
+    resizeMode: 'cover',
+    marginLeft: 25,
+    marginTop: 20,
+  },
   itemFooter: {
     marginTop: 10,
     justifyContent: 'flex-start',
   },
   title: {
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontWeight: '500',
     color: 'black',
     maxWidth: 313, // Giới hạn chiều cao của tiêu đề
     overflow: 'hidden', // Ẩn bớt nếu vượt quá chiều cao giới hạn
+    marginLeft: 25,
+    marginTop: 20,
   },
-  title1: {
-    fontSize: 20,
+  
+  learntitle: {
+    fontSize: 28,
     fontWeight: 'bold',
     color: '#696969',
     marginLeft: 20,
     marginTop: 30,
     marginBottom: 10,
   },
-
-  learntitle: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'black',
-    marginLeft: 20,
-    marginTop: 30,
-    marginBottom: 10,
-  },
   
   learntitle1: {
-    fontSize: 26,
+    fontSize: 23,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#696969',
     marginLeft: 20,
     marginTop: 20,
     marginBottom: 10,
-  },
-
-  date: {
-    fontSize: 14,
-    color: 'black',
-    textAlign: 'left',
-  },
-  date1: {
-    fontSize: 15,
-    color: 'black',
-    textAlign: 'left',
   },
   button: {
     backgroundColor: '#000000',
@@ -209,13 +245,5 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 10,
   },
-  viewall: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#696969',
-    marginTop: 20,
-    marginBottom: 10,
-    marginRight: 20,
-  }
 });
 export default Learn;
