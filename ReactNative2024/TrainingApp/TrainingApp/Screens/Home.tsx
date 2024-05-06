@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { User, MainComponent, Notification} from 'iconsax-react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}:any) => {
   return (
     <SafeAreaView style={styles.container}>
     <View style={styles.header}>
@@ -138,7 +138,7 @@ const HomeScreen = () => {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.itemContainer}>
             <View style={styles.item}>
-              <TouchableOpacity activeOpacity={1}>
+              <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('MatterScreen')}>
               <Image
                 source={require('../assets/Images/matter_and_energy.png')}
                 style={styles.image}

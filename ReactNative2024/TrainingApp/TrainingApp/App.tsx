@@ -12,6 +12,17 @@ import QuizzScreen from './Screens/QuizzSplashScreen';
 import Devteam from './Screens/Devteamlist';
 import ChapterQuizz from './Screens/ChapterQuizz';
 import Chapter from './Screens/Chapter';
+import Matter from './Screens/lythuyet/Matter';
+import Vatchat from './Screens/contentchapterscreen/Vatchat';
+import Hoachat from './Screens/contentchapterscreen/Hoachat';
+import Tinhchat from './Screens/contentchapterscreen/Tinhchathoahoc';
+import Nangluong from './Screens/contentchapterscreen/Nangluong';
+import Cacnangluong from './Screens/contentchapterscreen/Cacloainangluong';
+import Thunhiet from './Screens/contentchapterscreen/Phanungthunhiet';
+import MatterQuizz from './Screens/Quizz/MatterQuizz';
+
+
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -61,6 +72,14 @@ const App = () => {
         <Stack.Screen name="Contactteam" component={Devteam} options={{ headerShown: false }} />
         <Stack.Screen name="ChapterQuizz" component={ChapterQuizz} options={{ headerShown: false }} />
         <Stack.Screen name="Chapter" component={Chapter} options={{ headerShown: false }} />
+        <Stack.Screen name="MatterScreen" component={Matter} options={{ headerShown: false }} />
+        <Stack.Screen name="VatchatScreen" component={Vatchat} options={{ headerShown: false }} />
+        <Stack.Screen name="HoachatScreen" component={Hoachat} options={{ headerShown: false }} />
+        <Stack.Screen name="TinhchatScreen" component={Tinhchat} options={{ headerShown: false }} />
+        <Stack.Screen name="NangluongScreen" component={Nangluong} options={{ headerShown: false }} />
+        <Stack.Screen name="CacnangluongScreen" component={Cacnangluong} options={{ headerShown: false }} />
+        <Stack.Screen name="ThunhietScreen" component={Thunhiet} options={{ headerShown: false }} />
+        <Stack.Screen name="MatterquizzScreen" component={MatterQuizz} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

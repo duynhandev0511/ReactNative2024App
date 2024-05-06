@@ -1,65 +1,60 @@
-import { useState } from 'react';
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  View,
-  Image,
-  TouchableOpacity,
-  TextInput,
-  FlatList
-} from 'react-native';
-import { SearchNormal1 } from 'iconsax-react-native';
-import { User, MainComponent, Notification} from 'iconsax-react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, SafeAreaView, StatusBar, View, Image, TouchableOpacity, TextInput, FlatList } from 'react-native';
+import { SearchNormal1, User, Notification } from 'iconsax-react-native';
 import QuizzList from './QuizzList';
 
 const ChapterQuizz = ({ navigation }: any) => {
+  const Card = ({ quizz }: any) => {
+    const handlePress = () => {
+      let screenName;
+      // Điều hướng đến màn hình tương ứng với mỗi quizz
+      switch (quizz.name) {
+        case 'Vật chất và năng lượng':
+          screenName = 'MatterquizzScreen';
+          break;
+        case 'Các pha của vật chất':
+          screenName = 'Screen2';
+          break;
+        case 'Cấu trúc nguyên tử':
+          screenName = 'Screen3';
+          break;
+        default:
+          screenName = 'DefaultScreen'; // Màn hình mặc định nếu không khớp với bất kỳ quizz nào
+          break;
+      }
+      navigation.navigate(screenName);
+    };
 
-  const Card = ({ quizz, props }: any) => {
     return (
-      <View style={styles.card}>
-        <View style={styles.content}>
-          <Image
-            source={quizz.image}
-            style={styles.image}
-          />
-          <View style={styles.textContainer}>
-            <Text style={styles.title}>{quizz.name}</Text>
-          </View>
-          <TouchableOpacity
-            activeOpacity={0.7}
-            onPress={() => navigation.navigate('Contactteam')}
-          >
+      <TouchableOpacity  activeOpacity={1} onPress={handlePress}>
+        <View style={styles.card}>
+          <View style={styles.content}>
+            <Image source={quizz.image} style={styles.image} />
+            <View style={styles.textContainer}>
+              <Text style={styles.title}>{quizz.name}</Text>
+            </View>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Bắt đầu</Text>
             </View>
-          </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    )
+      </TouchableOpacity>
+    );
   };
-  
-  const [searchText, setSearchText] = useState('')
-  const searchTextLowerCase = searchText.toLowerCase();
-  const filteredList = QuizzList.filter(eachquizz => eachquizz.name.toLowerCase().includes(searchTextLowerCase));
+
+  const [searchText, setSearchText] = useState('');
+
   return (
     <SafeAreaView style={styles.container}>
-       <View style={styles.header}>
-        {/* Logo container */}
+      <StatusBar translucent={false} backgroundColor={'#0C0042'} />
+      <View style={styles.header}>
         <View style={styles.logoContainer}>
-          <Image
-            source={require('../assets/Images/logo1.png')}
-            style={styles.logo}
-          />
+          <Image source={require('../assets/Images/logo1.png')} style={styles.logo} />
         </View>
-        {/* Icon container */}
         <View style={styles.iconContainer}>
-          {/* User icon */}
           <TouchableOpacity style={styles.icon}>
             <User color="#fff" size={24} variant="Bold" />
           </TouchableOpacity>
-          {/* Notification icon */}
           <TouchableOpacity style={styles.icon}>
             <Notification color="#fff" size={24} variant="Bold" />
           </TouchableOpacity>
@@ -92,15 +87,15 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Chia không gian ngang đều cho các phần tử trong header
+    justifyContent: 'space-between',
     paddingHorizontal: 20,
     paddingTop: 10,
     height: 70,
     backgroundColor: '#0C0042',
   },
   logoContainer: {
-    flexDirection: 'row', // Hiển thị các phần tử trong logo container theo hàng ngang
-    alignItems: 'center', // Canh giữa các phần tử trong logo container
+    flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   logo: {
@@ -108,12 +103,12 @@ const styles = StyleSheet.create({
     height: 40,
     marginRight: 10,
   },
-    iconContainer: {
-    flexDirection: 'row', // Hiển thị các phần tử trong icon container theo hàng ngang
-    alignItems: 'center', // Canh giữa các phần tử trong icon container
+  iconContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   icon: {
-    marginLeft: 20, // Khoảng cách giữa các icon
+    marginLeft: 20,
   },
   searchContainer: {
     height: 50,
