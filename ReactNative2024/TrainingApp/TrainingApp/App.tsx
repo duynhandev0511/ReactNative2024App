@@ -20,6 +20,8 @@ import Nangluong from './Screens/contentchapterscreen/Nangluong';
 import Cacnangluong from './Screens/contentchapterscreen/Cacloainangluong';
 import Thunhiet from './Screens/contentchapterscreen/Phanungthunhiet';
 import MatterQuizz from './Screens/Quizz/MatterQuizz';
+import ScoreScreen from './Screens/ScoreScreen/Matterscore';
+import FlashcardItem from './Screens/FlashcardItem';
 
 
 
@@ -80,6 +82,8 @@ const App = () => {
         <Stack.Screen name="CacnangluongScreen" component={Cacnangluong} options={{ headerShown: false }} />
         <Stack.Screen name="ThunhietScreen" component={Thunhiet} options={{ headerShown: false }} />
         <Stack.Screen name="MatterquizzScreen" component={MatterQuizz} options={{ headerShown: false }} />
+        <Stack.Screen name="ScoreScreen" component={ScoreScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="FlashcardItemScreen" component={FlashcardItem} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -76,6 +76,18 @@ const Learn = ({navigation}:any) => {
           </View>
 
           <View style={styles.itemContainer1}>
+            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('FlashcardItemScreen')}>
+            <View style={styles.item1}>
+              <Image
+                source={require('../assets/Images/flc.png')}
+                style={styles.image1}
+              />
+             <Text style={styles.title}>Flashcard</Text>
+            </View>
+            </TouchableOpacity>
+          </View>
+          
+          <View style={styles.itemContainer1}>
             <TouchableOpacity activeOpacity={1}>
             <View style={styles.item1}>
               <Image
