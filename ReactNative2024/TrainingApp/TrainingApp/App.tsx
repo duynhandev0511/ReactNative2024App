@@ -22,6 +22,11 @@ import Thunhiet from './Screens/contentchapterscreen/Phanungthunhiet';
 import MatterQuizz from './Screens/Quizz/MatterQuizz';
 import ScoreScreen from './Screens/ScoreScreen/Matterscore';
 import FlashcardItem from './Screens/FlashcardItem';
+import FlashcardFlatList from './Screens/FlashcardFlatList';
+import FlashcardScreen from './Screens/FlashcardScreen';
+import LoginScreen from './Screens/Login';
+import Signup from './Screens/SignupScreen';
+
 
 
 
@@ -68,8 +73,10 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="LoginScreen">
         <Stack.Screen name="Tabs" component={TabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} />
         <Stack.Screen name="QuizzScreen" component={QuizzScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Contactteam" component={Devteam} options={{ headerShown: false }} />
         <Stack.Screen name="ChapterQuizz" component={ChapterQuizz} options={{ headerShown: false }} />
@@ -84,6 +91,8 @@ const App = () => {
         <Stack.Screen name="MatterquizzScreen" component={MatterQuizz} options={{ headerShown: false }} />
         <Stack.Screen name="ScoreScreen" component={ScoreScreen} options={{ headerShown: false }} />
         <Stack.Screen name="FlashcardItemScreen" component={FlashcardItem} options={{ headerShown: false }} />
+        <Stack.Screen name="FlashcardScreen" component={FlashcardScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="FlashcardFlatListScreen" component={FlashcardFlatList} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

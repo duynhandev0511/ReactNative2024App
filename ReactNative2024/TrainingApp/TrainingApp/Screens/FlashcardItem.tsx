@@ -21,14 +21,14 @@ const FlashcardItem = ({navigation}:any) => {
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <View style={styles.card}>
         <View style={styles.itemContainer}>
-            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Chapter')}>
+            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('FlashcardFlatListScreen')}>
             <View style={styles.item}>
               <Image
                 source={require('../assets/Images/periodic.png')}
                 style={styles.image}/>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.titletext}>Chemistry Flashcard</Text>
+                <Text style={styles.titletext}>Chemistry Flashcards</Text>
                 <Text style={styles.content}>Flashcard là công cụ học tập gọn nhẹ giúp nhớ thông tin về nguyên tố hóa học.</Text>
             </View>
             </TouchableOpacity>

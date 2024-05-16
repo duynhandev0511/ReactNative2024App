@@ -58,16 +58,16 @@ const FlashcardScreen = ({navigation,route}:any) => {
                       pagingEnabled
                       horizontal                      
                       >
-                        <Image source={item.image1} style={{width:screenWidth,height:630,marginTop:30}}></Image>
-                        <Image source={item.image2} style={{width:screenWidth,height:630,marginTop:30}}></Image>
-                        <Image source={item.image3} style={{width:screenWidth,height:630,marginTop:30}}></Image>
-                        <Image source={item.image4} style={{width:screenWidth,height:630,marginTop:30}}></Image>
-                        <Image source={item.image5} style={{width:screenWidth,height:630,marginTop:30}}></Image>
-                        <Image source={item.image6} style={{width:screenWidth,height:630,marginTop:30}}></Image>
+                        <Image source={item.image1} style={{width:screenWidth,height:630,marginTop:30, borderRadius: 10,}}></Image>
+                        <Image source={item.image2} style={{width:screenWidth,height:630,marginTop:30, borderRadius: 10,}}></Image>
+                        <Image source={item.image3} style={{width:screenWidth,height:630,marginTop:30, borderRadius: 10,}}></Image>
+                        <Image source={item.image4} style={{width:screenWidth,height:630,marginTop:30, borderRadius: 10,}}></Image>
+                        <Image source={item.image5} style={{width:screenWidth,height:630,marginTop:30, borderRadius: 10,}}></Image>
+                        <Image source={item.image6} style={{width:screenWidth,height:630,marginTop:30, borderRadius: 10,}}></Image>
 
                       </ScrollView>
                       <TouchableOpacity style={{alignContent:'center',alignItems:'center'}} onPress={PlaySound}>
-                      <MusicPlay size="32" color="#BA68C8" variant="Bold"/>
+                      <MusicPlay size="50" color="#1089ff" variant="Bold" style={{marginTop: 10,}}/>
                       </TouchableOpacity>            
                       </View>
                       

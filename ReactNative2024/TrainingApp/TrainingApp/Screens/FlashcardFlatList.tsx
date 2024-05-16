@@ -21,8 +21,7 @@ import{
 } from 'react-native'
 import Flashcardlist from "./Flashcardlist";
 import { colors } from "./color";
-import { ArrowLeftIcon, Bars3BottomRightIcon, Bars3CenterLeftIcon, Bars3Icon, MagnifyingGlassIcon } from 'react-native-heroicons/outline';
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import { SearchNormal, ArrowLeft } from "iconsax-react-native";
 const{width} = Dimensions.get("screen");
 const cardWidth = width/2 -20;
 const FlashcardFlatList =({navigation}:any) =>{
@@ -35,8 +34,8 @@ const FlashcardFlatList =({navigation}:any) =>{
           <Text style = {{fontSize:18,fontWeight:'bold',color:colors.dark,marginTop:30,textAlign:'center'}}>{flashcard.name}</Text>
           
         </View>
-        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Flashcardscreens',flashcard) }>
-        <View style={{marginTop:10,elevation:12,backgroundColor:'#1089ff',borderRadius:9,padding:6}}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('FlashcardScreen',flashcard) }>
+        <View style={{marginTop:10,elevation:12,backgroundColor:'black',borderRadius:9,padding:6}}>
          <Text style={{color:colors.white}}> View </Text>
          
         </View>
@@ -50,19 +49,19 @@ const FlashcardFlatList =({navigation}:any) =>{
    const [searchText,setSearchText] = useState('')
     return(
         <SafeAreaView style={{flex:1, backgroundColor:colors.white}}>
-            <StatusBar translucent={false} backgroundColor={colors.primary}/>
+            <StatusBar translucent={false} backgroundColor={"#0C0042"}/>
             <View style={style.header}>
             </View>
             
-                <View style={{backgroundColor:colors.primary,height:120,paddingHorizontal:20}}>
+                <View style={{backgroundColor:"#0C0042",height:120,paddingHorizontal:20}}>
                     <View style={{flex: 1}}>
                     <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.goBack()}>
-                      <ArrowLeftIcon size="30" color="white" strokeWidth={2} />
+                      <ArrowLeft size="30" color="white"  />
                       </TouchableOpacity>
                     <Text style={style.headerTitle}>Chemistry Flashcards</Text>
             
                     <View style={style.inputContainer}>
-                      <MagnifyingGlassIcon size="20" strokeWidth={2} color= "black"/>
+                      <SearchNormal size="20" strokeWidth={2} color= "black"/>
                     <TextInput 
                     onChangeText={(text) => {
                       
@@ -77,7 +76,7 @@ const FlashcardFlatList =({navigation}:any) =>{
                 
                   <View
                   style = {{paddingHorizontal:20,paddingVertical:50,flexDirection:'row',justifyContent:'space-between'}}>
-                  <Text style={{fontSize:20,fontWeight:'bold',color: Colors.dark}}>Flashcard</Text>
+                  <Text style={{fontSize:20,fontWeight:'bold',color: colors.dark}}>Flashcard</Text>
                   </View>
                   <View>
                   </View>
@@ -102,7 +101,7 @@ const style = StyleSheet.create({
       paddingHorizontal: 20,
       flexDirection: 'row',
       justifyContent: 'space-between',
-      backgroundColor: colors.primary,
+      backgroundColor: '#0C0042',
     },
     headerTitle: {
       color: colors.white,
@@ -126,10 +125,11 @@ const style = StyleSheet.create({
       height: 220,
       width: cardWidth,
       marginHorizontal:10,
+      marginVertical:10,
       elevation: 13,
       marginTop:50,
       borderRadius: 15,
-      backgroundColor: Colors.white,
+      backgroundColor: colors.white,
     },
 
     sectionTitle: {
