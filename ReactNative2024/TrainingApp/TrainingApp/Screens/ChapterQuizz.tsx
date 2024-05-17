@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, SafeAreaView, StatusBar, View, Image, TouchableOpacity, TextInput, FlatList } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, StatusBar, View, Image, TouchableOpacity, TextInput, FlatList, Dimensions } from 'react-native';
 import { SearchNormal1, User, Notification } from 'iconsax-react-native';
 import QuizzList from './QuizzList';
+const{width} = Dimensions.get("screen");
+const cardWidth = width/2 -10;
 
 const ChapterQuizz = ({ navigation }: any) => {
   const Card = ({ quizz }: any) => {
@@ -13,7 +15,7 @@ const ChapterQuizz = ({ navigation }: any) => {
           screenName = 'MatterquizzScreen';
           break;
         case 'Các pha của vật chất':
-          screenName = 'Screen2';
+          screenName = 'PhasesQuizzScreen';
           break;
         case 'Cấu trúc nguyên tử':
           screenName = 'Screen3';
@@ -129,7 +131,7 @@ const styles = StyleSheet.create({
   },
   card: {
     height: 220,
-    width: 170,
+    width: cardWidth,
     marginHorizontal: 5,
     marginVertical: 5,
     elevation: 5,

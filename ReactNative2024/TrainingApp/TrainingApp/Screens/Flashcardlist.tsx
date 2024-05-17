@@ -1623,7 +1623,7 @@ const Flashcardlist =[
 
     {
       name: 'Dinitrogen Oxide',
-      image: require('../assets/hinhflashcard/Ethanol.png'),
+      image: require('../assets/hinhflashcard/Dinitrogenoxide.png'),
       image1: require('../assets/Flashcard/Dinitrogen Oxide1.png'),
       image2: require('../assets/Flashcard/Dinitrogen Oxide2.png'),
       image3: require('../assets/Flashcard/Dinitrogen Oxide3.png'),

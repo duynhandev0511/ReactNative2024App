@@ -26,6 +26,22 @@ import FlashcardFlatList from './Screens/FlashcardFlatList';
 import FlashcardScreen from './Screens/FlashcardScreen';
 import LoginScreen from './Screens/Login';
 import Signup from './Screens/SignupScreen';
+import Phases from './Screens/lythuyet/PhasesofMatter';
+import Avogadro from './Screens/contentchapterscreen/Avogadro';
+import Biendoipha from './Screens/contentchapterscreen/Biendoipha';
+import Boyle from './Screens/contentchapterscreen/Boyle';
+import Charles from './Screens/contentchapterscreen/Charles';
+import Dalton from './Screens/contentchapterscreen/Dalton';
+import Dinhluatkhi from './Screens/contentchapterscreen/Dinhluatkhi';
+import Graham from './Screens/contentchapterscreen/Graham';
+import Khilytuong from './Screens/contentchapterscreen/Khilytuong';
+import PhasesScoreScreen from './Screens/ScoreScreen/PhasesScore';
+import Khi from './Screens/contentchapterscreen/Hanhvikhi';
+import Gas from './Screens/contentchapterscreen/Longkhiran';
+import PhasesQuizz from './Screens/Quizz/PhasesQuizz';
+import MineralsFlatlist from './Screens/MineralsFlatlist';
+import MineralsScreen from './Screens/MineralsScreen';
+
 
 
 
@@ -82,6 +98,7 @@ const App = () => {
         <Stack.Screen name="ChapterQuizz" component={ChapterQuizz} options={{ headerShown: false }} />
         <Stack.Screen name="Chapter" component={Chapter} options={{ headerShown: false }} />
         <Stack.Screen name="MatterScreen" component={Matter} options={{ headerShown: false }} />
+        <Stack.Screen name="PhasesScreen" component={Phases} options={{ headerShown: false }} />
         <Stack.Screen name="VatchatScreen" component={Vatchat} options={{ headerShown: false }} />
         <Stack.Screen name="HoachatScreen" component={Hoachat} options={{ headerShown: false }} />
         <Stack.Screen name="TinhchatScreen" component={Tinhchat} options={{ headerShown: false }} />
@@ -93,6 +110,20 @@ const App = () => {
         <Stack.Screen name="FlashcardItemScreen" component={FlashcardItem} options={{ headerShown: false }} />
         <Stack.Screen name="FlashcardScreen" component={FlashcardScreen} options={{ headerShown: false }} />
         <Stack.Screen name="FlashcardFlatListScreen" component={FlashcardFlatList} options={{ headerShown: false }} />
+        <Stack.Screen name="LongkhiranScreen" component={Gas} options={{ headerShown: false }} />
+        <Stack.Screen name="AvogadroScreen" component={Avogadro} options={{ headerShown: false }} />
+        <Stack.Screen name="BiendoiphaScreen" component={Biendoipha} options={{ headerShown: false }} />
+        <Stack.Screen name="BoyleScreen" component={Boyle} options={{ headerShown: false }} />
+        <Stack.Screen name="CharlesScreen" component={Charles} options={{ headerShown: false }} />
+        <Stack.Screen name="DaltonScreen" component={Dalton} options={{ headerShown: false }} />
+        <Stack.Screen name="DinhluatkhiScreen" component={Dinhluatkhi} options={{ headerShown: false }} />
+        <Stack.Screen name="GrahamScreen" component={Graham} options={{ headerShown: false }} />
+        <Stack.Screen name="HanhvikhiScreen" component={Khi} options={{ headerShown: false }} />
+        <Stack.Screen name="KhilytuongScreen" component={Khilytuong} options={{ headerShown: false }} />
+        <Stack.Screen name="PhasesQuizzScreen" component={PhasesQuizz} options={{ headerShown: false }} />
+        <Stack.Screen name="PhasesScoreScreen" component={PhasesScoreScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="MineralsFlatlistScreen" component={MineralsFlatlist} options={{ headerShown: false }} />
+        <Stack.Screen name="MineralsScreen" component={MineralsScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

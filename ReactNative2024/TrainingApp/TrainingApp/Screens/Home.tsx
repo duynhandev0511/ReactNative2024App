@@ -152,7 +152,7 @@ const HomeScreen = ({navigation}:any) => {
 
           <View style={styles.itemContainer}>
             <View style={styles.item}>
-              <TouchableOpacity activeOpacity={1}>
+              <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('PhasesScreen')}>
               <Image
                 source={require('../assets/Images/phrase_of_matter.png')}
                 style={styles.image}

@@ -7,33 +7,81 @@ import SectionComponent from "./auth/SectionComponent";
 import RowComponent from "./auth/RowComponent";
 import { colors } from "./color";
 import SocialLogin from "./auth/SocialLogin";
-import auth from '@react-native-firebase/auth';
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
 const LoginScreen = ({navigation}:any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isRemember, setIsRemember] = useState(true);
+  const [rePass, setRePass] = useState('');
+  const [isRegister, setIsRegister] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [userInfo, setUserInfo] = useState<FirebaseAuthTypes.User>();
+
   // Hàm xử lý đăng nhập
-  const handleSignIn = async () => {
+  const handleLogin = async () => {
     try {
-      const signInMethods = await auth().fetchSignInMethodsForEmail(email);
-      if (signInMethods.length > 0) {
-        // Email đã tồn tại, thực hiện đăng nhập
-        await auth().signInWithEmailAndPassword(email, password);
-        console.log('Đăng nhập thành công!');
-        // Thực hiện điều hướng tới màn hình sau khi đăng nhập thành công
-      } else {
-        // Email chưa được đăng kí, hiển thị cảnh báo
-        Alert.alert(
-          "Thông báo",
-          "Email chưa được đăng kí. Vui lòng đăng kí trước khi đăng nhập!",
-          [{ text: "OK", onPress: () => console.log("OK Pressed") }]
-        );
-      }
+      await auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          const user = userCredential.user;
+
+          if (user) {
+            setIsLogin(true);
+          }
+        })
+        .catch(error => {
+          // Hiển thị thông báo lỗi khi không thể đăng nhập
+          Alert.alert('Error', 'Could not log in. Please check your email and password.');
+          console.log('can not login: ', error);
+        });
     } catch (error) {
-      console.error('Lỗi đăng nhập:', error);
+      console.log('can not login: ', error);
     }
   };
+
+  // Hàm xử lý đăng kí
+  const handleRegister = async () => {
+    // check value
+    if (email && password && rePass) {
+      if (rePass !== password) {
+        // Hiển thị thông báo lỗi khi mật khẩu xác nhận không khớp
+        Alert.alert('Error', 'Password confirmation does not match.');
+      } else {
+        if (password.length < 6) {
+          // Hiển thị thông báo lỗi khi mật khẩu quá ngắn
+          Alert.alert('Error', 'Password must contain at least 6 characters.');
+        } else {
+          await auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(userCredential => {
+              const user = userCredential.user;
+
+              if (user) {
+                setUserInfo(user);
+                setIsRegister(false);
+              }
+            })
+            .catch(error => {
+              // Hiển thị thông báo lỗi khi không thể đăng kí
+              Alert.alert('Error', 'Could not register. Please try again later.');
+              console.log('can not register: ', error);
+            });
+        }
+      }
+    } else {
+      // Hiển thị thông báo lỗi khi email, mật khẩu hoặc mật khẩu xác nhận trống
+      Alert.alert('Error', 'Please fill in all fields.');
+    }
+  };
+
+  // Kiểm tra nếu chưa có tài khoản thì chuyển sang màn hình đăng kí
+  const handleNavigateToSignUp = () => {
+    if (!isLogin && !isRegister) {
+      navigation.navigate('Signup');
+    }
+  };
+
 
   return (
     <SafeAreaView>
@@ -82,7 +130,7 @@ const LoginScreen = ({navigation}:any) => {
     </RowComponent>
     </SectionComponent>
     <SectionComponent>
-      <TouchableOpacity activeOpacity={0.7} onPress={handleSignIn}>
+      <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Tabs')}>
         <View style={styles.button}>
         <Text style={styles.text}>Đăng nhập</Text>
         </View>

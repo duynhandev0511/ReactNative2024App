@@ -37,7 +37,7 @@ const FlashcardItem = ({navigation}:any) => {
 
         <View style={styles.card}>
         <View style={styles.itemContainer}>
-            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Chapter')}>
+            <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('MineralsFlatlistScreen')}>
             <View style={styles.item}>
               <Image
                 source={require('../assets/Images/minerals(1).png')}
