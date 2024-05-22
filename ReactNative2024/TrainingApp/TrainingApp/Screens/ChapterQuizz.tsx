@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, SafeAreaView, StatusBar, View, Image, TouchableOpacity, TextInput, FlatList, Dimensions } from 'react-native';
 import { SearchNormal1, User, Notification } from 'iconsax-react-native';
 import QuizzList from './QuizzList';
+import HeaderComponent from './auth/HeaderComponent';
 const{width} = Dimensions.get("screen");
 const cardWidth = width/2 -10;
 
@@ -49,19 +50,7 @@ const ChapterQuizz = ({ navigation }: any) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar translucent={false} backgroundColor={'#0C0042'} />
-      <View style={styles.header}>
-        <View style={styles.logoContainer}>
-          <Image source={require('../assets/Images/logo1.png')} style={styles.logo} />
-        </View>
-        <View style={styles.iconContainer}>
-          <TouchableOpacity style={styles.icon}>
-            <User color="#fff" size={24} variant="Bold" />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.icon}>
-            <Notification color="#fff" size={24} variant="Bold" />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <HeaderComponent />
       <View style={styles.searchContainer}>
         <SearchNormal1 size="20" color="black" />
         <TextInput
@@ -86,31 +75,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    paddingTop: 10,
-    height: 70,
-    backgroundColor: '#0C0042',
-  },
-  logoContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logo: {
-    width: 80,
-    height: 40,
-    marginRight: 10,
-  },
-  iconContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  icon: {
-    marginLeft: 20,
   },
   searchContainer: {
     height: 50,

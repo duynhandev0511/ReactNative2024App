@@ -41,6 +41,7 @@ import Gas from './Screens/contentchapterscreen/Longkhiran';
 import PhasesQuizz from './Screens/Quizz/PhasesQuizz';
 import MineralsFlatlist from './Screens/MineralsFlatlist';
 import MineralsScreen from './Screens/MineralsScreen';
+import News1 from './Screens/News/News1';
 
 
 
@@ -124,6 +125,7 @@ const App = () => {
         <Stack.Screen name="PhasesScoreScreen" component={PhasesScoreScreen} options={{ headerShown: false }} />
         <Stack.Screen name="MineralsFlatlistScreen" component={MineralsFlatlist} options={{ headerShown: false }} />
         <Stack.Screen name="MineralsScreen" component={MineralsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="News1Screen" component={News1} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

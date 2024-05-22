@@ -8,7 +8,7 @@ const Explore = ({navigation}:any) => {
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.tieude}>Tin tức</Text>
-        <TouchableOpacity activeOpacity={1}>
+        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('News1Screen') }>
           <View style={styles.boxnews}>
             <View style={styles.mainnews}>
               <Image
