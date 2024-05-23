@@ -1,3 +1,10 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable space-infix-ops */
+/* eslint-disable quotes */
+/* eslint-disable keyword-spacing */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { StyleSheet, Text, SafeAreaView, StatusBar, View, Image, TouchableOpacity, TextInput, FlatList, Dimensions } from 'react-native';
 import { SearchNormal1, User, Notification } from 'iconsax-react-native';

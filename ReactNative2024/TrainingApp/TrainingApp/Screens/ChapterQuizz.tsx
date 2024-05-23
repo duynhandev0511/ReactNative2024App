@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, SafeAreaView, StatusBar, View, Image, TouchableOpacity, TextInput, FlatList, Dimensions } from 'react-native';
-import { SearchNormal1, User, Notification } from 'iconsax-react-native';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  StatusBar,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  FlatList,
+  Dimensions,
+} from 'react-native';
+import {SearchNormal1, User, Notification} from 'iconsax-react-native';
 import QuizzList from './QuizzList';
 import HeaderComponent from './auth/HeaderComponent';
-const{width} = Dimensions.get("screen");
-const cardWidth = width/2 -10;
+const {width} = Dimensions.get('screen');
+const cardWidth = width / 2 - 10;
 
-const ChapterQuizz = ({ navigation }: any) => {
-  const Card = ({ quizz }: any) => {
+const ChapterQuizz = ({navigation}: any) => {
+  const Card = ({quizz}: any) => {
     const handlePress = () => {
       let screenName;
       // Điều hướng đến màn hình tương ứng với mỗi quizz
@@ -29,7 +41,7 @@ const ChapterQuizz = ({ navigation }: any) => {
     };
 
     return (
-      <TouchableOpacity  activeOpacity={1} onPress={handlePress}>
+      <TouchableOpacity activeOpacity={1} onPress={handlePress}>
         <View style={styles.card}>
           <View style={styles.content}>
             <Image source={quizz.image} style={styles.image} />
@@ -54,7 +66,7 @@ const ChapterQuizz = ({ navigation }: any) => {
       <View style={styles.searchContainer}>
         <SearchNormal1 size="20" color="black" />
         <TextInput
-          onChangeText={(text) => setSearchText(text)}
+          onChangeText={text => setSearchText(text)}
           autoCorrect={false}
           placeholder="Tìm kiếm"
           style={styles.input}
@@ -63,8 +75,10 @@ const ChapterQuizz = ({ navigation }: any) => {
       <FlatList
         showsVerticalScrollIndicator={false}
         numColumns={2}
-        data={QuizzList.filter(eachquizz => eachquizz.name.toLowerCase().includes(searchText.toLowerCase()))}
-        renderItem={({ item }) => <Card quizz={item} />}
+        data={QuizzList.filter(eachquizz =>
+          eachquizz.name.toLowerCase().includes(searchText.toLowerCase()),
+        )}
+        renderItem={({item}) => <Card quizz={item} />}
         keyExtractor={eachquizz => eachquizz.name}
       />
     </SafeAreaView>
@@ -124,7 +138,7 @@ const styles = StyleSheet.create({
   button: {
     width: 100,
     height: 'auto',
-    backgroundColor: "black",
+    backgroundColor: 'black',
     padding: 8,
     borderRadius: 15,
     alignItems: 'center',

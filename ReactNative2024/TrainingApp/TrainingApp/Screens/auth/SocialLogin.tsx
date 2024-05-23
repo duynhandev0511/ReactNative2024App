@@ -1,3 +1,9 @@
+/* eslint-disable eol-last */
+/* eslint-disable comma-dangle */
+/* eslint-disable @typescript-eslint/func-call-spacing */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import SectionComponent from "./SectionComponent";

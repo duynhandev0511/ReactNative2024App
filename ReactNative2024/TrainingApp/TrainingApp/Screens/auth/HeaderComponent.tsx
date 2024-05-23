@@ -1,7 +1,9 @@
+/* eslint-disable quotes */
+/* eslint-disable eol-last */
+/* eslint-disable prettier/prettier */
 import React from "react";
 import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { User, Notification } from "iconsax-react-native";
-
 const HeaderComponent = () => {
     return (
         <View style={styles.header}>

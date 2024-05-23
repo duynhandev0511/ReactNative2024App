@@ -1,3 +1,7 @@
+/* eslint-disable jsx-quotes */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
+/* eslint-disable quotes */
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Switch, Image, Alert } from 'react-native';
 import InputComponent from "./auth/InputComponent";

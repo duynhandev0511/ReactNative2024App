@@ -1,3 +1,8 @@
+/* eslint-disable jsx-quotes */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable comma-dangle */
+/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView, Alert } from 'react-native';
 import InputComponent from "./auth/InputComponent";
@@ -14,7 +19,7 @@ const initValue = {
   email: '',
   password: '',
   confirmPassword: '',
-}
+};
 
 const Signup = ({ navigation }: any) => {
   const [values, setValues] = useState(initValue);
@@ -23,7 +28,7 @@ const Signup = ({ navigation }: any) => {
     const data: any = { ...values };
     data[`${key}`] = value;
     setValues(data);
-  }
+  };
 
   const handleRegister = async () => {
     const { email, password, confirmPassword } = values;
@@ -54,7 +59,7 @@ const Signup = ({ navigation }: any) => {
       console.log('Registration error: ', error);
       Alert.alert("Error", "Registration failed. Please try again.");
     }
-  }
+  };
 
   return (
     <SafeAreaView>
