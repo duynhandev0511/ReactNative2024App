@@ -1,9 +1,3 @@
-/* eslint-disable eol-last */
-/* eslint-disable quotes */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable space-infix-ops */
-/* eslint-disable prettier/prettier */
 
 const Flashcardlist =[
   

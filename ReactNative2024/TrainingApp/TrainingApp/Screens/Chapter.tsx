@@ -1,10 +1,3 @@
-/* eslint-disable comma-dangle */
-/* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable space-infix-ops */
-/* eslint-disable quotes */
-/* eslint-disable keyword-spacing */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { StyleSheet, Text, SafeAreaView, StatusBar, View, Image, TouchableOpacity, TextInput, FlatList, Dimensions } from 'react-native';
 import { SearchNormal1, User, Notification } from 'iconsax-react-native';
@@ -26,8 +19,17 @@ const Chapter = ({ navigation }: any) => {
           screenName = 'PhasesScreen';
           break;
         case 'Cấu trúc nguyên tử':
-          screenName = 'Screen3';
+          screenName = 'Matter3';
           break;
+          case 'Bảng tuần hoàn và định luật':
+            screenName = 'Matter4';
+            break;
+            case 'Liên kết hóa học':
+              screenName = 'Matter5';
+              break;
+              case 'Phép cân bằng và cân bằng hóa học trong dung dịch':
+                screenName = 'Matter6';
+                break;
         default:
           screenName = 'DefaultScreen'; // Màn hình mặc định nếu không khớp với bất kỳ quizz nào
           break;

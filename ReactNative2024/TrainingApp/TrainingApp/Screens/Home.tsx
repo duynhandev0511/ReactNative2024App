@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import {
   StyleSheet,
@@ -8,18 +7,16 @@ import {
   View,
   Image,
   TouchableOpacity,
-  FlatList,
+  FlatList
 } from 'react-native';
-import {User, MainComponent, Notification} from 'iconsax-react-native';
+import { User, MainComponent, Notification} from 'iconsax-react-native';
 import HeaderComponent from './auth/HeaderComponent';
 
-const HomeScreen = ({navigation}: any) => {
+const HomeScreen = ({navigation}:any) => {
   return (
     <SafeAreaView style={styles.container}>
       <HeaderComponent />
-      <ScrollView
-        style={styles.scrollView}
-        showsVerticalScrollIndicator={false}>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.itemContainer}>
             <View style={styles.item}>
@@ -29,9 +26,7 @@ const HomeScreen = ({navigation}: any) => {
               />
             </View>
             <View style={styles.itemFooter}>
-              <Text style={styles.title}>
-                Quy trình làm đề đánh giá năng lực...
-              </Text>
+              <Text style={styles.title}>Quy trình làm đề đánh giá năng lực...</Text>
               <Text style={styles.date}>01/01/2024</Text>
               <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Tìm hiểu</Text>
@@ -71,9 +66,7 @@ const HomeScreen = ({navigation}: any) => {
             </View>
           </View>
         </ScrollView>
-        <Text style={styles.title1}>
-          <MainComponent size="22" color="#696969" variant="Bold" /> Tính năng
-        </Text>
+        <Text style={styles.title1}><MainComponent size="22" color="#696969" variant="Bold"/> Tính năng</Text>  
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.itemContainer}>
             <View style={styles.item}>
@@ -123,19 +116,15 @@ const HomeScreen = ({navigation}: any) => {
             </View>
           </View>
         </ScrollView>
-        <Text style={styles.title1}>
-          <MainComponent size="22" color="#696969" variant="Bold" /> Lý thuyết
-        </Text>
+        <Text style={styles.title1}><MainComponent size="22" color="#696969" variant="Bold"/> Lý thuyết</Text>  
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.itemContainer}>
             <View style={styles.item}>
-              <TouchableOpacity
-                activeOpacity={1}
-                onPress={() => navigation.navigate('MatterScreen')}>
-                <Image
-                  source={require('../assets/Images/matter_and_energy.png')}
-                  style={styles.image}
-                />
+              <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('MatterScreen')}>
+              <Image
+                source={require('../assets/Images/matter_and_energy.png')}
+                style={styles.image}
+              />
               </TouchableOpacity>
             </View>
             <View style={styles.itemFooter}>
@@ -145,13 +134,11 @@ const HomeScreen = ({navigation}: any) => {
 
           <View style={styles.itemContainer}>
             <View style={styles.item}>
-              <TouchableOpacity
-                activeOpacity={1}
-                onPress={() => navigation.navigate('PhasesScreen')}>
-                <Image
-                  source={require('../assets/Images/phrase_of_matter.png')}
-                  style={styles.image}
-                />
+              <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('PhasesScreen')}>
+              <Image
+                source={require('../assets/Images/phrase_of_matter.png')}
+                style={styles.image}
+              />
               </TouchableOpacity>
             </View>
             <View style={styles.itemFooter}>
@@ -160,18 +147,20 @@ const HomeScreen = ({navigation}: any) => {
           </View>
 
           <View style={styles.itemContainer}>
-            <View style={styles.item}>
-              <TouchableOpacity activeOpacity={1}>
-                <Image
-                  source={require('../assets/Images/Atomicstructure.png')}
-                  style={styles.image}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.itemFooter}>
-              <Text style={styles.title}>Cấu trúc nguyên tử</Text>
-            </View>
-          </View>
+  <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('Matter3')}>
+    <View style={styles.item}>
+      <Image
+        source={require('../assets/Images/Atomicstructure.png')}
+        style={styles.image}
+      />
+    </View>
+  </TouchableOpacity>
+  <View style={styles.itemFooter}>
+    <Text style={styles.title}>Cấu trúc nguyên tử</Text>
+  </View>
+</View>
+
+          
         </ScrollView>
       </ScrollView>
     </SafeAreaView>
@@ -207,7 +196,7 @@ const styles = StyleSheet.create({
     height: 142,
     backgroundColor: 'grey',
     borderRadius: 10,
-    overflow: 'hidden',
+    overflow: 'hidden', 
     shadowColor: 'gray',
     shadowOffset: {
       width: 0,
@@ -220,7 +209,7 @@ const styles = StyleSheet.create({
   image: {
     width: 313,
     height: 142,
-    resizeMode: 'stretch',
+    resizeMode: 'stretch'
   },
   itemFooter: {
     marginTop: 10,

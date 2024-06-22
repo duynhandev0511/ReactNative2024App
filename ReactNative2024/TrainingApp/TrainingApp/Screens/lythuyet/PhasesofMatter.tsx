@@ -12,6 +12,7 @@ import {
 import { User, MainComponent, Notification} from 'iconsax-react-native';
 
 
+
 const Phases= ({navigation}:any) => {
   return (
     <SafeAreaView style={styles.container}>

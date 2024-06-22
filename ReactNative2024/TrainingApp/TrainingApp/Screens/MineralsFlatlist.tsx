@@ -1,15 +1,4 @@
-/* eslint-disable eol-last */
-/* eslint-disable comma-dangle */
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable space-infix-ops */
-/* eslint-disable semi */
-/* eslint-disable keyword-spacing */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable prettier/prettier */
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import{
     SafeAreaView,
   ScrollView,
@@ -30,10 +19,10 @@ import{
 
 
 } from 'react-native'
-import Mineralslist from './Mineralslist';
-import { colors } from './color';
-import { SearchNormal, ArrowLeft } from 'iconsax-react-native';
-const{width} = Dimensions.get('screen');
+import Mineralslist from "./Mineralslist";
+import { colors } from "./color";
+import { SearchNormal, ArrowLeft } from "iconsax-react-native";
+const{width} = Dimensions.get("screen");
 const cardWidth = width/2 -20;
 const MineralsFlatlist =({navigation}:any) =>{
   
@@ -60,11 +49,11 @@ const MineralsFlatlist =({navigation}:any) =>{
    const [searchText,setSearchText] = useState('')
     return(
         <SafeAreaView style={{flex:1, backgroundColor:colors.white}}>
-            <StatusBar translucent={false} backgroundColor={'#0C0042'}/>
+            <StatusBar translucent={false} backgroundColor={"#0C0042"}/>
             <View style={style.header}>
             </View>
             
-                <View style={{backgroundColor:'#0C0042',height:120,paddingHorizontal:20}}>
+                <View style={{backgroundColor:"#0C0042",height:120,paddingHorizontal:20}}>
                     <View style={{flex: 1}}>
                     <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.goBack()}>
                       <ArrowLeft size="30" color="white"  />
@@ -118,7 +107,7 @@ const style = StyleSheet.create({
       color: colors.white,
       fontWeight: 'bold',
       fontSize: 23,
-      marginTop:'2%'
+      marginTop:"2%"
     },
     inputContainer: {
       height: 60,

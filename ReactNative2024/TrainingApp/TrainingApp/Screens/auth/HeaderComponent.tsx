@@ -1,6 +1,3 @@
-/* eslint-disable quotes */
-/* eslint-disable eol-last */
-/* eslint-disable prettier/prettier */
 import React from "react";
 import { View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { User, Notification } from "iconsax-react-native";
@@ -10,7 +7,7 @@ const HeaderComponent = () => {
         {/* Logo container */}
         <View style={styles.logoContainer}>
           <Image
-            source={require('../assets/Images/logo1.png')}
+            source={require("../assets/Images/logo1.png")}
             style={styles.logo}
           />
         </View>

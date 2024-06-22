@@ -1,34 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const Explore = ({navigation}: any) => {
+const Explore = ({navigation}:any) => {
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.tieude}>Tin tức</Text>
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={() => navigation.navigate('News1Screen')}>
+        <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('News1Screen') }>
           <View style={styles.boxnews}>
             <View style={styles.mainnews}>
               <Image
                 source={require('../assets/Images/Thumnail.png')}
                 style={styles.imgnews}
               />
-              <Text style={styles.maintext}>
-                Bắt đầu đăng ký dự thi đánh giá năng lực Đại học Quốc gia TP.HCM
-                đợt 2
-              </Text>
+              <Text style={styles.maintext}>Bắt đầu đăng ký dự thi đánh giá năng lực Đại học Quốc gia TP.HCM đợt 2</Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -40,12 +27,9 @@ const Explore = ({navigation}: any) => {
                 source={require('../assets/Images/dangkiduthi.jpg')}
                 style={styles.img}
               />
-              <Text style={styles.maintext1}>
-                Hướng dẫn thí sinh đăng kí dự thi tốt nghiệp THPT 2024 trực
-                tuyến
-              </Text>
+              <Text style={styles.maintext1}>Hướng dẫn thí sinh đăng kí dự thi tốt nghiệp THPT 2024 trực tuyến</Text>
             </View>
-          </View>
+            </View>
         </TouchableOpacity>
 
         <TouchableOpacity activeOpacity={1}>
@@ -55,12 +39,9 @@ const Explore = ({navigation}: any) => {
                 source={require('../assets/Images/xettuyen.jpg')}
                 style={styles.img}
               />
-              <Text style={styles.maintext1}>
-                20 phương thức xét tuyển đại học năm 2024, thí sinh rộng cửa vào
-                đại học
-              </Text>
+              <Text style={styles.maintext1}>20 phương thức xét tuyển đại học năm 2024, thí sinh rộng cửa vào đại học</Text>
             </View>
-          </View>
+            </View>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -97,7 +78,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   mainnews: {
-    width: 340,
+    width: 340 ,
     height: 285,
     borderRadius: 20,
     alignItems: 'center',
@@ -106,7 +87,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   mainnews1: {
-    width: 340,
+    width: 340 ,
     height: 100,
     borderRadius: 20,
     alignItems: 'center',
@@ -116,14 +97,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   imgnews: {
-    width: 310,
+    width: 310 ,
     height: 180,
     resizeMode: 'stretch',
     borderRadius: 10,
     marginTop: 15,
   },
   img: {
-    width: 106,
+    width: 106 ,
     height: 73,
     resizeMode: 'stretch',
     borderRadius: 10,

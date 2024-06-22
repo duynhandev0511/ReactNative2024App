@@ -1,5 +1,3 @@
-/* eslint-disable comma-dangle */
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native';
 
